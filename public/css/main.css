@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Orbitron", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.logo {
+    height: 100px;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.card {
+    margin: .5rem 0 1rem 0;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+input {
+    color: #000;
+}
+
+.button,
+.button.input {
+    border: none;
+    border-radius: 0;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.message {
+    font-size: 2rem;
+    padding-bottom: 10px;
+}

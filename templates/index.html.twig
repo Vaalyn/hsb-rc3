@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Hackerspace Bielefeld - Remote Congress</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/skeleton.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+
+        <link href="css/fonts.css" rel="stylesheet">
+
+        <link href="css/colors-palette-{{ palette }}.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <div class="logo">
+                        <img class="u-max-full-width" src="image/logo-palette-{{ palette }}.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="two columns">&nbsp;</div>
+                <div class="eight columns">
+                    <div class="card primary-color-background-4">
+                        <div class="card-content">
+                            <h1 class="align-center primary-color-1">Hacker&shy;space Bielefeld</h1>
+
+                            {% for message in messages %}
+                            <div class="row">
+                                <div class="twelve columns align-center">
+                                    {% for text in message %}
+                                        <div class="message">{{ text }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            <div class="row">
+                                <div class="twelve columns">
+                                    <form action="/validate-code" method="post">
+                                        <div class="row">
+                                            <div class="twelve columns">
+                                                <input type="text" name="code" id="code" placeholder="Dein Code" class="u-full-width"/>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="type" value="{{ type }}"/>
+                                        <input type="submit" value="Submit" class="button input u-full-width primary-color-1 primary-color-background-2"/>
+                                    </form>
+                                </div>
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
