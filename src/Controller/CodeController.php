@@ -9,6 +9,7 @@ use Slim\Flash;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 use Vaalyn\HsbRc3\Utility\CodeTypeResolver;
+use Vaalyn\HsbRc3\Utility\RedirectLinkResolver;
 use Vaalyn\HsbRc3\Validator\CodeValidator;
 
 class CodeController
@@ -46,8 +47,10 @@ class CodeController
             return $response->withRedirect('/' . $type, 307);
         }
 
+        $redirectLink = RedirectLinkResolver::getRedirectLinkForCodeType($codeType);
+
         return $response->withRedirect(
-            $_ENV['RC3_SUCCESS_LINK'],
+            $redirectLink,
             307
         );
     }
