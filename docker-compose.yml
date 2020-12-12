@@ -5,7 +5,7 @@ services:
         image: nginx:latest
         container_name: web
         ports:
-            - "7777:80"
+            - '${HTTP_PORT:-80}:80'
         depends_on:
             - php
         volumes:
